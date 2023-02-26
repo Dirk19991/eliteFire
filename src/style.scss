@@ -850,6 +850,7 @@ a {
   text-align: center;
   margin: 0 auto;
   width: 1194px;
+  margin-bottom: 2px;
 
   &__header {
     @include h2();
@@ -895,50 +896,194 @@ a {
 .custom {
   margin: 0 auto;
   width: 1194px;
-}
-
-.middle {
-  width: 50%;
-  max-width: 410px;
-}
-.slider-container {
   position: relative;
-}
-.slider-container .bar {
-  position: absolute;
-  z-index: 1;
-  left: 2px;
-  top: 7px;
-  width: 100%;
-  height: 2px;
-  border-radius: 5px;
-  background-color: rgba(100, 100, 100, 1);
-  overflow: hidden;
-}
-.slider-container .bar .fill {
-  display: block;
-  width: 0;
-  height: 100%;
-  background-color: rgba(255, 207, 122, 1);
-}
-.slider-container .slider {
-  position: relative;
-  z-index: 2;
-  appearance: none;
-  width: 100%;
-  height: 10px;
-  border-radius: 5px;
-  outline: none;
-  background-color: transparent;
-}
-.slider-container .slider::-webkit-slider-thumb {
-  appearance: none;
-  width: 30px;
-  height: 30px;
-  background-color: rgba(255, 207, 122, 1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
-  cursor: pointer;
-  outline: none;
+  h5 {
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 55px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.5);
+  }
 
-  transition: 0.3s ease-in-out;
+  &__header {
+    @include h2();
+    margin-bottom: 65px;
+  }
+
+  &__main {
+    width: 100%;
+    display: flex;
+    gap: 85px;
+  }
+
+  &__options {
+    width: 55%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: -22px;
+  }
+
+  &__lengthGroup {
+    display: flex;
+    align-items: center;
+    margin-top: -19px;
+    gap: 40px;
+
+    > div:not(.custom__middle) {
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 55px;
+    }
+
+    > .custom__middle {
+      margin-right: 7px;
+    }
+  }
+
+  &__facePanel {
+    display: flex;
+    flex-direction: column;
+
+    &_imageContainer {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      margin-left: -4px;
+      margin-top: -2px;
+      margin-bottom: 13px;
+    }
+  }
+
+  &__greyBars {
+    display: flex;
+    gap: 4px;
+    margin-left: 135px;
+    margin-bottom: 13px;
+  }
+
+  &__greyBar {
+    height: 1px;
+    width: 9px;
+    background-color: #464239;
+  }
+
+  &__additional {
+    width: 680px;
+  }
+
+  &__checkboxWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: -5px;
+  }
+
+  &__checkboxContainer {
+    width: 320px;
+    display: block;
+    position: relative;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 30px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    > input {
+      position: absolute;
+      opacity: 0;
+      cursor: pointer;
+      height: 0;
+      width: 0;
+
+      &:checked ~ .custom__checkmark:after {
+        display: block;
+      }
+
+      &:checked ~ .custom__checkmark {
+        background-color: rgba(236, 207, 148, 1);
+      }
+    }
+  }
+
+  &__checkmark {
+    position: absolute;
+    top: 5px;
+    left: 195px;
+    height: 20px;
+    width: 20px;
+    border: 1px solid rgba(236, 207, 148, 1);
+
+    &::after {
+      content: '';
+      position: absolute;
+      display: none;
+    }
+
+    &::after {
+      color: black;
+      font-weight: 700;
+      content: '+';
+      left: 5px;
+      top: -5px;
+    }
+  }
+
+  &__image {
+  }
+
+  &__middle {
+    width: 410px;
+  }
+
+  &__slider-container {
+    position: relative;
+  }
+  &__bar {
+    position: absolute;
+    z-index: 1;
+    left: 2px;
+    top: 7px;
+    width: 100%;
+    height: 2px;
+    border-radius: 5px;
+    background-color: rgba(100, 100, 100, 1);
+    overflow: hidden;
+  }
+  &__fill {
+    display: block;
+    width: 0;
+    height: 100%;
+    background-color: rgba(255, 207, 122, 1);
+  }
+  &__slider {
+    position: relative;
+    z-index: 2;
+    appearance: none;
+    width: 100%;
+    height: 10px;
+    border-radius: 5px;
+    outline: none;
+    background-color: transparent;
+  }
+  &__slider::-webkit-slider-thumb {
+    appearance: none;
+    width: 30px;
+    height: 30px;
+    background-color: rgba(255, 207, 122, 1);
+
+    cursor: pointer;
+    outline: none;
+
+    transition: 0.3s ease-in-out;
+  }
 }
