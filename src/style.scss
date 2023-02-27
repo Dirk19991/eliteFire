@@ -106,6 +106,7 @@ ul {
 
 a {
   all: unset;
+  cursor: pointer;
 }
 
 .header {
@@ -149,6 +150,8 @@ a {
 
   &__phone {
     margin-left: 17px;
+    cursor: pointer;
+    z-index: 10;
   }
 }
 
@@ -450,7 +453,7 @@ a {
       top: 480px;
       left: 340px;
       border-radius: 50%;
-      border: 2px solid #ffcf7a;
+      border: 2px solid $yellow;
       filter: drop-shadow(0px 8px 35px #ffe2a4);
     }
 
@@ -462,7 +465,7 @@ a {
       top: 430px;
       left: 261px;
       border-radius: 50%;
-      border: 1px solid #ffcf7a;
+      border: 1px solid $yellow;
       filter: drop-shadow(0px 4px 23px #ffe2a4);
     }
   }
@@ -516,7 +519,7 @@ a {
     height: 927.64px;
     top: -100px;
     left: -200px;
-    background: #000000;
+    background: &black;
     filter: blur(250px);
     border-radius: 300px;
     transform: rotate(45deg);
@@ -809,6 +812,8 @@ a {
     font-size: 18px;
     line-height: 30px;
     color: #121212;
+    cursor: pointer;
+    z-index: 10;
 
     > span {
       z-index: 4;
@@ -900,6 +905,7 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 87px;
 
   h5 {
     font-weight: 500;
@@ -913,12 +919,21 @@ a {
   &__header {
     @include h2();
     margin-bottom: 65px;
+    background: linear-gradient(
+      235.41deg,
+      #ffffff 28.47%,
+      rgba(255, 255, 255, 0.38) 91.88%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
 
   &__main {
     width: 100%;
     display: flex;
     gap: 85px;
+    margin-bottom: 60px;
   }
 
   &__options {
@@ -1038,9 +1053,6 @@ a {
     }
   }
 
-  &__image {
-  }
-
   &__middle {
     width: 410px;
   }
@@ -1085,5 +1097,175 @@ a {
     outline: none;
 
     transition: 0.3s ease-in-out;
+  }
+
+  &__footer {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+    h4 {
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 55px;
+      letter-spacing: 0.135em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.5);
+    }
+  }
+
+  &__footerLength {
+    > div {
+      margin-top: -12px;
+      font-size: 24px;
+      line-height: 55px;
+    }
+  }
+
+  &__footerFacePanel {
+    transform: translateX(-9px);
+    > div {
+      width: 28px;
+      height: 28px;
+      background: #b8542a;
+      border-radius: 50%;
+    }
+  }
+
+  &__footerPrice {
+    transform: translateX(27px);
+    font-weight: 300;
+    font-size: 36px;
+    line-height: 40px;
+    letter-spacing: 0.05em;
+    color: $yellow;
+
+    > div {
+      margin-top: -10px;
+    }
+  }
+
+  &__footerButton {
+    margin-top: 20px;
+  }
+}
+
+.contact {
+  padding-top: 71px;
+  background-color: #121212;
+  width: 1440px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+
+  &__container {
+    width: 1194px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 77px;
+  }
+
+  &__header {
+    @include h2();
+    margin-bottom: 70px;
+    background: linear-gradient(
+      179.91deg,
+      #ffffff 37.36%,
+      rgba(255, 255, 255, 0.1) 86.46%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  &__main {
+    display: flex;
+    gap: 217px;
+  }
+
+  h6 {
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 36px;
+    color: #949494;
+  }
+
+  p {
+    font-weight: 300;
+    font-size: 22px;
+    line-height: 33px;
+
+    &.contact__phone {
+      font-weight: 250;
+      font-size: 36px;
+      line-height: 33px;
+      margin-top: 11px;
+    }
+  }
+
+  &__mainColumn {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    &:last-child {
+      margin-left: 80px;
+    }
+  }
+
+  &__button {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 30px;
+    padding: 14px 33px 16px 28px;
+    border: 1px solid #ceb787;
+    border-radius: 2px;
+    margin-top: 20px;
+  }
+}
+
+.footer {
+  border-top: 1px solid #232323;
+  background-color: #121212;
+  width: 1440px;
+  height: 103px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+
+  > div {
+    cursor: pointer;
+  }
+
+  &__container {
+    width: 1194px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__logo {
+    font-family: 'Scania Sans CY Headline';
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 70px;
+    letter-spacing: 0.105em;
+  }
+
+  &__year,
+  &__company,
+  &__agreement {
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: 0.05em;
+    color: $lightGrey;
+  }
+
+  &__year {
+    transform: translateX(-77px);
+  }
+
+  &__company {
+    transform: translateX(-217px);
   }
 }
